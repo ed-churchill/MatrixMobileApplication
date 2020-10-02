@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatrixMobileApplication.AlphabetStepperCell">
+    <StackLayout Orientation="Horizontal" Padding="14, 0, 5, 0">
+        <Label Text="{Binding Letter, StringFormat='Matrix Name: {0}'}" TextColor="WhiteSmoke" VerticalOptions="Center" FontSize="20"/>
+        <Button x:Name="MinusButton" Text="Prev" Clicked="Prev_Button_Clicked" HorizontalOptions="EndAndExpand" TranslationX="5"/>
+        <Button x:Name="PlusButton" Text="Next" Clicked="Next_Button_Clicked" HorizontalOptions="End"/>
+    </StackLayout>
+</ViewCell>

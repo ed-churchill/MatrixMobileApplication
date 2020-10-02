@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatrixMobileApplication.MatrixListPage"
+             Title="Matrix List"
+             BackgroundColor="#046875"
+             NavigationPage.HasBackButton="False">
+
+    <StackLayout Padding="10">
+        <Button Text="Add Matrix" TextColor="WhiteSmoke" FontSize="16" BackgroundColor="Red" CornerRadius="20" Clicked="Add_Matrix_Button_Clicked"/>
+        <ListView x:Name="matrix_list_view" HasUnevenRows="True" ItemSelected="matrix_list_view_ItemSelected" ItemTapped="matrix_list_view_ItemTapped" SeparatorColor="WhiteSmoke">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding RealMatrixString}" TextColor="WhiteSmoke" FontSize="16" LineBreakMode="WordWrap" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

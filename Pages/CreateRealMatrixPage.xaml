@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MatrixMobileApplication"
+             x:Class="MatrixMobileApplication.CreateRealMatrixPage"
+             BackgroundColor="#046875"
+             Title="Create New Real Matrix">
+    
+    <StackLayout>
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Real Matrix Properties" TextColor="WhiteSmoke">
+                    <local:AlphabetStepperCell x:Name="alphabet_stepper_cell"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="14, 0, 5, 0">
+                            <Label Text="Rows:" VerticalOptions="Center" FontSize="20" TextColor="WhiteSmoke"/>
+                            <Label Text="{Binding Source={x:Reference RowStepper}, Path=Value}" VerticalOptions="Center" FontSize="20" TextColor="WhiteSmoke"/>
+                            <Stepper x:Name="RowStepper" Maximum="9" Minimum="2" Increment="1" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="14, 0, 5, 0">
+                            <Label Text="Columns:" VerticalOptions="Center" FontSize="20" TextColor="WhiteSmoke"/>
+                            <Label Text="{Binding Source={x:Reference ColumnStepper}, Path=Value}" VerticalOptions="Center" FontSize="20" TextColor="WhiteSmoke"/>
+                            <Stepper x:Name="ColumnStepper" Maximum="9" Minimum="2" Increment="1" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <Button Text="Create Matrix" TextColor="WhiteSmoke" VerticalOptions="End" BackgroundColor="Red" Clicked="Button_Clicked"/>
+    </StackLayout>
+</ContentPage>

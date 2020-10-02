@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatrixMobileApplication.WelcomePage"
+             BackgroundColor="#046875"
+             Title="Welcome"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Text="Welcome to QuickMatrix!" TextColor="WhiteSmoke" FontSize="25" HorizontalOptions="Center" VerticalOptions="End"/>
+        <Label Grid.Row="1" Text="Where matrix computations are made easy" TextColor="WhiteSmoke" FontSize="16" Opacity="0.6" HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Button Grid.Row="2" Text="Continue to app" TextColor="WhiteSmoke" VerticalOptions="End" BackgroundColor="Red" Clicked="Continue_Button_Clicked"/>
+    </Grid>
+</ContentPage>
