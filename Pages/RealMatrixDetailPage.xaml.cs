@@ -63,7 +63,7 @@ namespace MatrixMobileApplication
             Label det = new Label { Text = "det(" + current_matrix.name + ") = " + current_matrix.Det().ToString(), TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
             s.Children.Add(det);
 
-            Label characteristic_polynomial = new Label { Text = "Characteristic(" + current_matrix.name + ") = " + current_matrix.CharacteristicPolynomial().ToString(), TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
+            Label characteristic_polynomial = new Label { Text = "Characteristic(" + current_matrix.name + ") = " + current_matrix.CharPolynomial().ToString(), TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
             s.Children.Add(characteristic_polynomial);
 
             ScrollView scroll = new ScrollView { Content = s };

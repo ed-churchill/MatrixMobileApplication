@@ -843,7 +843,7 @@ namespace FirstApplication
         /// <summary>
         /// Returns the characteristic polynomial of the RealMatrix
         /// </summary>
-        public RealPolynomial CharacteristicPolynomial()
+        public RealPolynomial CharPolynomial()
         {
             if (m != n)
             {
