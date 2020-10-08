@@ -774,22 +774,6 @@ namespace FirstApplication
         }
 
         /// <summary>
-        /// Returns true if the RealMatrix is invertible (has 0 determinant) and returns false otherwise
-        /// </summary>
-        public bool IsInvertible()
-        {
-            if (Det() == 0)
-            {
-                return false;
-            }
-
-            else
-            {
-                return true;
-            }
-        }
-
-        /// <summary>
         /// Returns the inverse of the RealMatrix if it exists, otherwise throws an exception
         /// </summary>
         public RealMatrix Inv()

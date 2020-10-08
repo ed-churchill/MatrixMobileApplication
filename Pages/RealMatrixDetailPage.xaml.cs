@@ -40,7 +40,8 @@ namespace MatrixMobileApplication
             Label transpose_matrix = new Label { Text = current_matrix.Transpose().ToString(), TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
             s.Children.Add(transpose_matrix);
 
-            if (current_matrix.IsInvertible())
+            // Condition for matrix to have an inverse (must be square with non-zero determinant)
+            if (current_matrix.NumRows() == current_matrix.NumColumns() && current_matrix.Det() != 0)
             {
                 Label inv = new Label { Text = "Inverse", TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
                 Label inverse_matrix = new Label { Text = current_matrix.Rref().ToString(), TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
@@ -60,11 +61,21 @@ namespace MatrixMobileApplication
             Label nullity = new Label { Text = "Nullity(" + current_matrix.name + ") = " + current_matrix.Nullity().ToString(), TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
             s.Children.Add(nullity);
 
-            Label det = new Label { Text = "det(" + current_matrix.name + ") = " + current_matrix.Det().ToString(), TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
-            s.Children.Add(det);
+            if (current_matrix.NumRows() == current_matrix.NumColumns())
+            {
+                Label det = new Label { Text = "det(" + current_matrix.name + ") = " + current_matrix.Det().ToString(), TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
+                s.Children.Add(det);
+                Label characteristic_polynomial = new Label { Text = "Characteristic(" + current_matrix.name + ") = " + current_matrix.CharPolynomial().ToString(), TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
+                s.Children.Add(characteristic_polynomial);
+            }
 
-            Label characteristic_polynomial = new Label { Text = "Characteristic(" + current_matrix.name + ") = " + current_matrix.CharPolynomial().ToString(), TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
-            s.Children.Add(characteristic_polynomial);
+            else
+            {
+                Label no_det = new Label { Text = "The matrix is not square so has no characteristic polynomial", TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
+                s.Children.Add(no_det);
+                Label no_char = new Label { Text = "The matrix is not square so has no characteristic polynomial", TextColor = Color.WhiteSmoke, HorizontalOptions = LayoutOptions.Center, FontSize = 16 };
+                s.Children.Add(no_char);
+            }
 
             ScrollView scroll = new ScrollView { Content = s };
             Content = scroll;
